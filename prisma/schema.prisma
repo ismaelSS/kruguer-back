@@ -13,10 +13,23 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum ROLE {
+  MASTER
+  ADMIN
+  CLIENT
+}
+
+enum STATUS {
+  ON
+  OFF
+  FAIL
+}
+
 model User {
   id String @id @default(uuid())
   password String
   email String @unique
+  role ROLE @default(CLIENT)
 
   equipment Equipment[]
 
@@ -25,9 +38,10 @@ model User {
 
 model Equipment {
   id String @id @default(uuid())
+  serial String @unique
   name String
-  isActive Boolean @default(false)
-  changed DateTime
+  status STATUS @default(OFF)
+  changed DateTime @default(now())
 
   User User @relation(fields: [user_id], references: [id])
   user_id String

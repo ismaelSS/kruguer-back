@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "equipments" ALTER COLUMN "changed" SET DEFAULT CURRENT_TIMESTAMP;
