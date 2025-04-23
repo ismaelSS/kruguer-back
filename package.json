@@ -4,10 +4,10 @@
   "main": "build/server.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
-    "start": "node build/server.js",
     "lint": "eslint src -e .ts --fix",
-    "postinstall": "npm install --only=dev && npm run build",
-    "build": "prisma generate && tsup src --out-dir build"
+    "postinstall": "npm ci --only=dev && npm run build",
+    "build": "prisma generate && tsup src --out-dir build",
+    "start": "node build/server.js"
   },
   "engines": {
     "node": ">=18.0.0"
