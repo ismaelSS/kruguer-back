@@ -6,7 +6,7 @@
     "dev": "tsx watch src/server.ts",
     "lint": "eslint src -e .ts --fix",
     "postinstall": "npm ci --only=dev && npm run build",
-    "build": "prisma generate && tsup src --out-dir build",
+    "build": "tsup src --out-dir build",
     "start": "node build/server.js"
   },
   "engines": {
