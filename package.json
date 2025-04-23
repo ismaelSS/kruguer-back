@@ -1,7 +1,7 @@
 {
   "name": "back-kruguer",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "build/server.js",
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "start": "node build/server.js",
