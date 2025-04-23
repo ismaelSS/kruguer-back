@@ -5,8 +5,12 @@
   "scripts": {
     "dev": "tsx watch src/server.ts",
     "start": "node build/server.js",
-    "lint": "eslint src -e .ts  --fix",
-    "build": "tsup src --out-dir build"
+    "lint": "eslint src -e .ts --fix",
+    "build": "prisma generate && tsup src --out-dir build",
+    "postinstall": "npm run build"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   },
   "keywords": [],
   "author": "",
